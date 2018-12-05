@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style>
+body
+{
+    background-image: url("images/chat.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%; 
+    background-attachment: fixed;
+}
+.MyStyle
+{
+    background-image: url("images/chat.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%; 
+    background-attachment: fixed;
+}
+</style>
+</head>
+<body>
+<div class="container" ng-controller="ChatController">
+<form ng-submit="addMessage()"name="chatmsg">
+<table class="table">
+<tr>
+<td>Chat Text</td>
+<td>
+<input type="text" ng-model="message"/>
+<span class="count" ng-bind="max - message.length">140</span>
+</td>
+<td>
+<button ng-disabled="message.length<140 | message.length==0" class="btn btn-info">Send</button>
+</td>
+</tr>
+</table>
+</form>
+<p ng-repeat="message in messages | orderBy:'time ':true">
+<time>{{message.time|date:'HH:MM'}}</time>
+<span>{{message.message}}</span>
+</p>
+</div>

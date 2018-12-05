@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>reg.html Register - User</title>
+<link rel="stylesheet" href="lib/css/default.css">
+
+<style>
+body
+{
+    background-image: url("images/signup.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+</style>
+</head>
+<body>
+
+<div data-ng-controller = "UserController as ctrl">
+<form class="register" data-ng-submit="ctrl.registerUser()" role="form">
+     <h1>REGISTER TO CREATE AN ACCOUNT</h1>
+           <center><fieldset class="row1">
+                
+               
+                    <center><label>UserName *</label>
+                  	<input type="text" placeholder="Choose a UserName" required="required" id="username" data-ng-model="user.username" maxlength="50"/></center><br><br>
+                    <center><label>Email ID *</label>
+                    <input type="text" placeholder="Your Mail ID" required="required" id="mail_id" data-ng-model="user.mail_id" maxlength="200"/></center><br><br>
+                
+                
+                    <center><label>Password*</label>
+                    <input type="password" placeholder="Choose a Password" required="required" id="password1" data-ng-model="user.password" maxlength="25"></center><br><br>
+                   <center><label>Repeat Password*</label>
+                    <input type="password" placeholder="Confirm Password" required="required" id="password2" data-ng-model="verifyPassword" maxlength="25">
+                    <label class="obinfo">* Required Fields
+                    </label></center><br><br>
+               
+           
+                   <center><label>First Name *</label>
+                   	<input type="text" placeholder="Your Name" required="required" id="first_name" data-ng-model="user.first_name" maxlength="100"/></center><br><br>
+               
+					<center><label class="optional">Last Name</label>
+                    <input type="text" placeholder="Your Last Name" required="required" id="last_name" data-ng-model="user.last_name" maxlength="100"/></center><br><br>
+               
+                 <center><label>Role *</label>
+                    <select data-ng-model='user.role' required="required">
+                        <option value="STUDENT">STUDENT</option>
+                        <option value="ALUMINI">ALUMINI</option>
+                        <option value="FACULTY">FACULTY</option>
+                    </select></center><br><br>
+               
+                    <label>Gender *</label>
+                    <input type="radio" name="gender" data-ng-model='user.gender' value="M" checked="checked"/>
+                    <label class="gender">Male</label>
+                    <input type="radio" name="gender" data-ng-model='user.gender' value="F"/>
+                    <label class="gender">Female</label><br><br>
+               
+                    <label>Birthdate *</label>
+                    <input type="date" data-ng-model="user.dob" placeholder="DD/MM/YYYY format only">
+                
+                
+            </fieldset></center>
+
+              <div><input type="submit" class="button" value="SUBMIT"></div>
+        </form>
+</div>
+</body>
+</html>
